@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+    <title>Document</title>
+  </head>
+  <style>
+    button {
+      font-weight: bold;
+      font-size: large;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      gap: 5px 10px;
+      width: 100%;
+    }
+
+    .actions-wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 5px 10px;
+    }
+
+    .actions-wrapper button {
+      width: 100%;
+    }
+
+    .calculator-wrapper {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .operations-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 5px 10px;
+      margin-left: 10px;
+    }
+
+    .operations-wrapper button {
+      height: 100%;
+      width: 70px;
+    }
+  </style>
+  <body>
+    <h1>Calculator</h1>
+    <section>
+      <input
+        id="inputNum"
+        style="width: 100%; font-size: larger"
+        placeholder="0.0"
+      />
+
+      <div class="actions-wrapper">
+        <button onclick="resetState()">AC</button>
+        <button onclick="deleteNum()">DEL</button>
+      </div>
+
+      <div class="calculator-wrapper">
+        <div class="grid-container">
+          <button onclick="appendNum('1')">1</button>
+          <button onclick="appendNum('2')">2</button>
+          <button onclick="appendNum('3')">3</button>
+          <button onclick="appendNum('4')">4</button>
+          <button onclick="appendNum('5')">5</button>
+          <button onclick="appendNum('6')">6</button>
+          <button onclick="appendNum('7')">7</button>
+          <button onclick="appendNum('8')">8</button>
+          <button onclick="appendNum('9')">9</button>
+          <button onclick="appendNum('0')">0</button>
+          <button onclick="appendNum('.')">.</button>
+          <button onclick="getResult()">=</button>
+        </div>
+
+        <div class="operations-wrapper">
+          <button onclick="setOperation('/')">/</button>
+          <button onclick="setOperation('*')">*</button>
+          <button onclick="setOperation('-')">-</button>
+          <button onclick="setOperation('+')">+</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="main.js"></script>
+  </body>
+</html>
